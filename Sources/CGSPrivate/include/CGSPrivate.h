@@ -1,9 +1,7 @@
 //
 //  CGSPrivate.h
-//  GenieWarpMesh
 //
-//  Private CGS (Core Graphics Services) API declarations
-//  for window warp effects.
+//  Private Core Graphics Services API declarations.
 //
 
 #ifndef CGSPrivate_h
@@ -30,10 +28,6 @@ typedef struct {
 	CGSMeshPoint global;
 } CGSWarpPoint;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /// Get the default connection to the window server.
 extern CGSConnectionID CGSMainConnectionID(void);
 
@@ -44,9 +38,7 @@ extern CGSConnectionID CGSMainConnectionID(void);
 /// @param cid    Connection ID from CGSMainConnectionID().
 /// @param wid    The window number (NSWindow.windowNumber).
 /// @param bounds Pointer to a CGRect to receive the window bounds (CG coordinate system, top-left origin).
-extern CGError CGSGetWindowBounds(CGSConnectionID cid,
-								  CGSWindowID wid,
-								  CGRect *bounds);
+extern CGError CGSGetWindowBounds(CGSConnectionID cid, CGSWindowID wid, CGRect *bounds);
 
 // MARK: - Mesh Warp API
 
@@ -56,13 +48,6 @@ extern CGError CGSGetWindowBounds(CGSConnectionID cid,
 /// @param w    Number of columns in the mesh grid.
 /// @param h    Number of rows in the mesh grid.
 /// @param mesh Pointer to a w*h array of CGSWarpPoint. Pass NULL with w=0,h=0 to reset.
-extern CGError CGSSetWindowWarp(CGSConnectionID cid,
-								CGSWindowID wid,
-								int w, int h,
-								const CGSWarpPoint *mesh);
-
-#ifdef __cplusplus
-}
-#endif
+extern CGError CGSSetWindowWarp(CGSConnectionID cid, CGSWindowID wid, int w, int h, const CGSWarpPoint *mesh);
 
 #endif /* CGSPrivate_h */
