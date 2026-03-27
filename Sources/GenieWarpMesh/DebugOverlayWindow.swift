@@ -12,14 +12,10 @@ import Cocoa
 
 /// ジニーワープのデバッグデータを可視化する透過フルスクリーンオーバーレイウインドウ。
 ///
-/// メインスクリーン全体を覆い、高いウインドウレベルに配置される。
-/// 全てのマウスイベントを無視し、ユーザーによる移動もできない。
-/// ``GenieDebugOverlay`` に準拠しており、``GenieEffect`` からカーブおよび
-/// メッシュデータを直接受信できる。
-///
-/// ``GenieEffect/debugOverlayReceiver`` にインスタンスを設定してオーバーレイを
-/// 有効化する。`orderFront` の呼び出しや画面ジオメトリ変更時の
-/// ``fitToScreen()`` 呼び出しは呼び出し元の責務。
+/// メインスクリーン全体を覆い、高いウインドウレベルに配置される。全てのマウスイベントを無視し、ユーザーによる移動もできない。
+/// ``GenieDebugOverlay`` に準拠しており、``GenieEffect`` からカーブおよびメッシュデータを直接受信できる。
+/// ``GenieEffect/debugOverlayReceiver`` にインスタンスを設定してオーバーレイを有効化する。
+/// `orderFront` の呼び出しや画面ジオメトリ変更時の ``fitToScreen()`` 呼び出しは呼び出し元の責務。
 public class DebugOverlayWindow: NSWindow {
 
 	private let overlayView = DebugOverlayView()
@@ -95,16 +91,15 @@ public class DebugOverlayWindow: NSWindow {
 
 extension DebugOverlayWindow: GenieDebugOverlay {
 
-	public func receiveCurveGuideData(
-		leftCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
-		rightCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
-		sourceFrame: CGRect,
-		targetFrame: CGRect,
-		fitRect: CGRect?,
-		leftExtensionEnd: CGPoint?,
-		rightExtensionEnd: CGPoint?,
-		correctedData: CorrectedCurveData?
-	) {
+	public func receiveCurveGuideData(leftCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
+									  rightCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
+									  sourceFrame: CGRect,
+									  targetFrame: CGRect,
+									  fitRect: CGRect?,
+									  leftExtensionEnd: CGPoint?,
+									  rightExtensionEnd: CGPoint?,
+									  correctedData: CorrectedCurveData?)
+	{
 		overlayView.leftCurve = leftCurve
 		overlayView.rightCurve = rightCurve
 		overlayView.sourceFrame = sourceFrame
@@ -119,13 +114,12 @@ extension DebugOverlayWindow: GenieDebugOverlay {
 		overlayView.correctedSourceFrame = correctedData?.sourceFrame
 		forceDisplay()
 	}
-
-	public func receiveMeshEdgePoints(
-		_ points: [CGPoint],
-		gridWidth: Int,
-		gridHeight: Int,
-		screenHeight: CGFloat
-	) {
+	
+	public func receiveMeshEdgePoints(_ points: [CGPoint],
+									  gridWidth: Int,
+									  gridHeight: Int,
+									  screenHeight: CGFloat)
+	{
 		overlayView.meshEdgePoints = points
 		overlayView.meshGridWidth = gridWidth
 		overlayView.meshGridHeight = gridHeight
@@ -491,14 +485,16 @@ class DebugOverlayView: NSView {
 	private func cgToCocoa(_ point: CGPoint, screenHeight: CGFloat) -> CGPoint {
 		return CGPoint(x: point.x, y: screenHeight - point.y)
 	}
-
+	
 	/// 3次ベジェカーブを描画する。P0→P3 を制御点 P1, P2 で結ぶ。
-	private func drawBezierCurve(
-		context: CGContext,
-		p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint,
-		color: NSColor,
-		dashed: Bool = false
-	) {
+	private func drawBezierCurve(context: CGContext,
+								 p0: CGPoint,
+								 p1: CGPoint,
+								 p2: CGPoint,
+								 p3: CGPoint,
+								 color: NSColor,
+								 dashed: Bool = false)
+	{
 		let path = CGMutablePath()
 		path.move(to: p0)
 		path.addCurve(to: p3, control1: p1, control2: p2)
@@ -514,13 +510,15 @@ class DebugOverlayView: NSView {
 			context.setLineDash(phase: 0, lengths: [])
 		}
 	}
-
+	
 	/// 制御点ハンドルと制御線を描画する。
-	private func drawControlPoints(
-		context: CGContext,
-		p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint,
-		color: NSColor
-	) {
+	private func drawControlPoints(context: CGContext,
+								   p0: CGPoint,
+								   p1: CGPoint,
+								   p2: CGPoint,
+								   p3: CGPoint,
+								   color: NSColor)
+	{
 		// 制御線 (P0→P1, P2→P3)
 		context.setStrokeColor(color.withAlphaComponent(0.3).cgColor)
 		context.setLineWidth(1.0)
@@ -562,12 +560,11 @@ class DebugOverlayView: NSView {
 	}
 
 	/// P3 → far edge への延長線を描画する（破線 + 終端ドット）。
-	private func drawExtensionLine(
-		context: CGContext,
-		from start: CGPoint,
-		to end: CGPoint,
-		color: NSColor
-	) {
+	private func drawExtensionLine(context: CGContext,
+								   from start: CGPoint,
+								   to end: CGPoint,
+								   color: NSColor)
+	{
 		// 破線で延長線を描画
 		context.setStrokeColor(color.cgColor)
 		context.setLineWidth(1.5)

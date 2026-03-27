@@ -8,11 +8,9 @@
 
 import Foundation
 
-/// ソースウインドウをターゲットとの最小エッジ間隔を維持するために
-/// 再配置した際に使用される、補正ベジェカーブのデータ。
+/// 退避移動の際の補正ベジェカーブのデータを表す。
 ///
-/// ソースとターゲットの矩形が近すぎる場合、`GenieEffect` は
-/// 補正フレームを計算し、二次的なカーブセットを生成する。
+/// ソースとターゲットの矩形が近すぎる場合、`GenieEffect` は補正フレームを計算し、二次的なカーブセットを生成する。
 /// この構造体はオーバーレイ描画用にそのデータを保持する。
 public struct CorrectedCurveData {
 	/// 補正カーブの左辺ベジェ制御点 (CG座標系)。
@@ -26,13 +24,12 @@ public struct CorrectedCurveData {
 	/// 補正済みソースフレーム (Cocoa座標系: 左下原点)。
 	public let sourceFrame: CGRect
 
-	public init(
-		leftCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
-		rightCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
-		leftExtensionEnd: CGPoint,
-		rightExtensionEnd: CGPoint,
-		sourceFrame: CGRect
-	) {
+	public init(leftCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
+				rightCurve: (p0: CGPoint, p1: CGPoint, p2: CGPoint, p3: CGPoint),
+				leftExtensionEnd: CGPoint,
+				rightExtensionEnd: CGPoint,
+				sourceFrame: CGRect)
+	{
 		self.leftCurve = leftCurve
 		self.rightCurve = rightCurve
 		self.leftExtensionEnd = leftExtensionEnd
@@ -43,15 +40,9 @@ public struct CorrectedCurveData {
 
 /// ``GenieEffect`` からデバッグ可視化データを受信するプロトコル。
 ///
-/// ジニーワープアニメーション中にベジェカーブパスやメッシュ外枠の
-/// 交点データを受信するために準拠する。ワープジオメトリを可視化する
-/// デバッグオーバーレイの描画に使用する。
-///
-/// UI 管理 (`orderFront`, `fitToScreen` 等) は準拠型の責務であり、
-/// ``GenieEffect`` は関与しない。
-///
-/// ライブラリには組み込みの準拠型として ``DebugOverlayWindow`` が
-/// 提供されている。
+/// ジニーワープアニメーション中にベジェカーブパスやメッシュ外枠の交点データを受信するために準拠する。ワープジオメトリを可視化するデバッグオーバーレイの描画に使用する。
+/// UI 管理 (`orderFront`, `fitToScreen` 等) は準拠型の責務であり、 ``GenieEffect`` は関与しない。
+/// ライブラリには組み込みの準拠型として ``DebugOverlayWindow`` が提供されている。
 public protocol GenieDebugOverlay: AnyObject {
 	/// カーブガイドデータが更新された際に呼ばれる。
 	///

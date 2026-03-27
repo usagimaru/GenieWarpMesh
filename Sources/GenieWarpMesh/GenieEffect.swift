@@ -14,16 +14,14 @@ import CGSPrivate
 
 /// ウインドウにジニーエフェクトを適用する。
 ///
-/// `minimize(window:to:direction:completion:)` でウインドウをターゲット矩形に
-/// 吸い込み、`restore(window:from:direction:completion:)` で復元する。
+/// `minimize(window:to:direction:completion:)` でウインドウをターゲット矩形に吸い込み、`restore(window:from:direction:completion:)` で復元する。
 ///
 /// ## 座標系
 /// 全ての public メソッドの矩形パラメータは **Cocoa座標系 (左下原点)** を使用する。
 /// `NSWindow.frame` や `NSScreen.frame` の値をそのまま渡せる。
 ///
 /// ## デバッグオーバーレイ
-/// ``debugOverlayReceiver`` に ``GenieDebugOverlay`` 準拠のオブジェクトを設定すると、
-/// アニメーション中のカーブ軌跡やメッシュ外枠データを受信できる。
+/// ``debugOverlayReceiver`` に ``GenieDebugOverlay`` 準拠のオブジェクトを設定すると、アニメーション中のカーブ軌跡やメッシュ外枠データを受信できる。
 /// ライブラリには組み込みの実装として ``DebugOverlayWindow`` が提供されている。
 public class GenieEffect {
 
@@ -133,14 +131,12 @@ public class GenieEffect {
 
 	/// ウインドウをターゲット矩形に向かってワープ・最小化する。
 	///
-	/// ベジェカーブのパスに沿ってウインドウを変形し、`targetRect` に吸い込む。
-	/// 完了後、ウインドウは非表示になるが閉じられない。
+	/// ベジェカーブのパスに沿ってウインドウを変形し、`targetRect` に吸い込む。完了後、ウインドウは非表示になるが閉じられない。
 	///
 	/// - Parameters:
 	///   - window: 最小化するウインドウ。
 	///   - targetRect: ワープ先のスクリーン座標矩形 (Cocoa座標系: 左下原点。例: Dock アイコンのフレーム)。
-	///   - direction: ワープエフェクトの方向。デフォルトは `.auto` で、
-	///     ウインドウとターゲットの相対位置から自動判定する。
+	///   - direction: ワープエフェクトの方向。デフォルトは `.auto` で、ウインドウとターゲットの相対位置から自動判定する。
 	///   - completion: アニメーション完了時に呼ばれるコールバック。
 	public func minimize(window: NSWindow,
 						 to targetRect: CGRect,
@@ -166,14 +162,12 @@ public class GenieEffect {
 	/// 最小化されたウインドウを逆再生ワープで復元する。
 	///
 	/// ウインドウは `targetRect` から元のフレームに向かって展開される。
-	/// アニメーション開始前に完全にワープされたメッシュが適用され、
-	/// ターゲット矩形から出現するように見える。
+	/// アニメーション開始前に完全にワープされたメッシュが適用され、ターゲット矩形から出現するように見える。
 	///
 	/// - Parameters:
 	///   - window: 復元するウインドウ。
 	///   - targetRect: 復元元のスクリーン座標矩形 (Cocoa座標系: 左下原点)。
-	///   - direction: ワープエフェクトの方向。デフォルトは `.auto` で、
-	///     ウインドウとターゲットの相対位置から自動判定する。
+	///   - direction: ワープエフェクトの方向。デフォルトは `.auto` で、ウインドウとターゲットの相対位置から自動判定する。
 	///   - completion: アニメーション完了時に呼ばれるコールバック。
 	public func restore(window: NSWindow,
 						from targetRect: CGRect,
@@ -218,11 +212,10 @@ public class GenieEffect {
 	/// 補正が不要な場合は `nil` を返す。
 	///
 	/// 座標系: Cocoa (左下原点)。
-	public func computeCorrectedFrame(
-		sourceFrame: CGRect,
-		targetFrame: CGRect,
-		direction: GenieDirection
-	) -> CGRect? {
+	public func computeCorrectedFrame(sourceFrame: CGRect,
+									  targetFrame: CGRect,
+									  direction: GenieDirection) -> CGRect?
+	{
 		let direction = direction.resolved(from: sourceFrame, to: targetFrame)
 		let gap: CGFloat
 		switch direction {
@@ -261,19 +254,17 @@ public class GenieEffect {
 
 	/// 指定されたフレームのカーブおよびレイアウトデータでデバッグオーバーレイを更新する。
 	///
-	/// ソースまたはターゲットウインドウが移動した際にオーバーレイ表示を更新するために
-	/// アプリ側から呼び出す。アニメーションは実行せず、カーブデータの計算と
-	/// `debugOverlayReceiver` への送信のみ行う。
+	/// ソースまたはターゲットウインドウが移動した際にオーバーレイ表示を更新するためにアプリ側から呼び出す。
+	/// アニメーションは実行せず、カーブデータの計算と `debugOverlayReceiver` への送信のみ行う。
 	///
 	/// 座標系: Cocoa (左下原点)。
-	public func updateDebugOverlayForCurrentLayout(
-		sourceFrame: CGRect,
-		targetFrame: CGRect,
-		direction: GenieDirection
-	) {
+	public func updateDebugOverlayForCurrentLayout(sourceFrame: CGRect,
+												   targetFrame: CGRect,
+												   direction: GenieDirection)
+	{
 		guard let overlay = debugOverlayReceiver else { return }
 		guard let screenHeight = NSScreen.main?.frame.height else { return }
-
+		
 		let resolvedDirection = direction.resolved(from: sourceFrame, to: targetFrame)
 
 		// 一時的に状態を設定してカーブを計算
@@ -419,8 +410,7 @@ public class GenieEffect {
 		// 退避移動の進行度
 		// rawT（生の時間値）を retreatEnd 区間で 0→1 にマッピングし、retreatEasing を適用。
 		// rawT ベースを使う理由:
-		//   イージング済みの progress t を使うと、退避にもメインイージングが二重適用されて
-		//   ぎこちなくなる。生の時間値 + 退避独自のイージングで滑らかな退避を実現する。
+		//   イージング済みの progress t を使うと、退避にもメインイージングが二重適用されてぎこちなくなる。生の時間値 + 退避独自のイージングで滑らかな退避を実現する。
 		let retreatProgress: CGFloat
 		if animationCorrectedFrame != nil {
 			let rawDirectional = isReversed ? (1.0 - rawT) : rawT
@@ -497,12 +487,10 @@ public class GenieEffect {
 	/// 補正フレームからカーブデータを計算する
 	///
 	/// correctedFrame に基づいてフルカーブ（P0〜P3）をそのまま生成する。
-	/// メッシュは computeGeniePoint 内で同じ correctedFrame から同一カーブを計算するため、
-	/// ガイド線とメッシュの移動パスが完全に一致する。
+	/// メッシュは computeGeniePoint 内で同じ correctedFrame から同一カーブを計算するため、ガイド線とメッシュの移動パスが完全に一致する。
 	///
 	/// trailing 辺がカーブ P0 に到達するのは progress 初期のみで、
-	/// retreat 完了時には t=rowSlide まで進んでいるが、これはカーブ形状の
-	/// 自然な挙動であり、ガイドカーブとの整合性に影響しない。
+	/// retreat 完了時には t=rowSlide まで進んでいるが、これはカーブ形状の自然な挙動であり、ガイドカーブとの整合性に影響しない。
 	private func computeCorrectedCurveDataInternal(
 		correctedFrame: CGRect,
 		targetFrame: CGRect,
@@ -756,8 +744,7 @@ public class GenieEffect {
 	///   P1.x = P0.x に固定 → カーブ序盤で X 座標が一定（垂直に出発）
 	///   P2.x = P3.x に固定 → カーブ終盤でターゲットに滑らかに到達
 	///
-	///   メッシュの各行の左右端をカーブ上の点から直接取得することで、
-	///   ウインドウの変形がカーブに正確に沿う。
+	///   メッシュの各行の左右端をカーブ上の点から直接取得することで、ウインドウの変形がカーブに正確に沿う。
 	private func computeCurvePaths(frame: CGRect, cgFrameY: CGFloat, screenHeight: CGFloat) -> CurvePaths {
 
 		let winLeft = frame.origin.x
@@ -769,9 +756,8 @@ public class GenieEffect {
 		let targetTop = targetCGY
 		let targetBottom = targetCGY + targetRect.height
 
-		// ウインドウのアスペクト比を考慮して、ターゲットに scale-to-fit した
-		// 終着点座標を計算する。非正方形ウインドウの場合、カーブの終着幅が
-		// ターゲット矩形の全幅ではなく、フィット後の幅に収束する。
+		// ウインドウのアスペクト比を考慮して、ターゲットに scale-to-fit した終着点座標を計算する。
+		// 非正方形ウインドウの場合、カーブの終着幅がターゲット矩形の全幅ではなく、フィット後の幅に収束する。
 		let winAspect = frame.width / max(frame.height, 1.0)
 		let targetAspect = targetRect.width / max(targetRect.height, 1.0)
 		let fitWidth: CGFloat
@@ -862,8 +848,7 @@ public class GenieEffect {
 
 	// MARK: - 2段階イージング（連続ベジェ方式）
 	//
-	// フェーズ境界での速度不連続を排除するため、
-	// 1本の3次ベジェカーブで「序盤急→中盤溜め→後半再加速」を表現する。
+	// フェーズ境界での速度不連続を排除するため、1本の3次ベジェカーブで「序盤急→中盤溜め→後半再加速」を表現する。
 	// 制御点の Y 値で到達量を、X 値でタイミングを制御。
 
 	/// 1次元の3次ベジェ補間 (t → value)
@@ -908,11 +893,9 @@ public class GenieEffect {
 	//   trailing側 (edgeNorm=0): slideProgress^3.0 (大きく遅延)
 	//   → 進行方向側が先行し、後方が引っ張られて間延びする
 	//
-	// 各メッシュ行は拡張カーブ (ベジェ + P3→far edge 直線延長) 上を
-	// 連続的に移動するため、別途のブレンドフェーズは不要。
+	// 各メッシュ行は拡張カーブ (ベジェ + P3→far edge 直線延長) 上を連続的に移動するため、別途のブレンドフェーズは不要。
 
-	/// smoothstep: 指定区間内で 0→1 に滑らかに遷移する
-	/// 区間外では 0 または 1 にクランプされる
+	/// smoothstep: 指定区間内で 0→1 に滑らかに遷移する区間外では 0 または 1 にクランプされる
 	private func smoothstep(edge0: CGFloat, edge1: CGFloat, x: CGFloat) -> CGFloat {
 		let t = min(max((x - edge0) / (edge1 - edge0), 0.0), 1.0)
 		return t * t * (3.0 - 2.0 * t)
@@ -929,15 +912,11 @@ public class GenieEffect {
 	/// 開始点のみ二次イーズインで滑らかにし、残りは線形。
 	///
 	/// 完全な smoothstep を使わない理由:
-	/// 全体のイージングは genieEase が担当しており、
-	/// smoothstep を重ねると二重イージングで終盤が停滞する。
-	/// 開始点だけ滑らかにすることで、収縮→移動の遷移時の
-	/// 微分不連続によるカクつきを解消しつつ、
-	/// 終端は線形のまま維持して二重イージングを回避する。
+	/// 全体のイージングは genieEase が担当しており、smoothstep を重ねると二重イージングで終盤が停滞する。
+	/// 開始点だけ滑らかにすることで、収縮→移動の遷移時の微分不連続によるカクつきを解消しつつ、終端は線形のまま維持して二重イージングを回避する。
 	private func computeSlideProgress(_ progress: CGFloat) -> CGFloat {
 		let t = min(max((progress - slideStart) / (slideEnd - slideStart), 0.0), 1.0)
-		// 開始側のみ二次イーズイン: t が blendZone 以下では二次カーブ、
-		// それ以降は線形に接続する区分関数。
+		// 開始側のみ二次イーズイン: t が blendZone 以下では二次カーブ、それ以降は線形に接続する区分関数。
 		// blendZone = 0.3 → 移動区間の序盤30%でソフトに立ち上がる。
 		//
 		// 区分関数 g(t):

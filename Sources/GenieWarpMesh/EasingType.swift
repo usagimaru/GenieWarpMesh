@@ -14,31 +14,31 @@ import Foundation
 /// 命名は一般的な慣例に従う: `easeIn` は加速、`easeOut` は減速、
 /// `easeInOut` はその両方。
 public enum EasingType: Int, CaseIterable, Sendable {
-	/// 線形補間 (イージングなし)。
+	/// 線形補間 (イージングなし)
 	case linear
-	/// 2次 ease-in (速度ゼロから加速)。
+	/// 2次 ease-in (速度ゼロから加速)
 	case easeInQuad
-	/// 3次 ease-in。
+	/// 3次 ease-in
 	case easeInCubic
-	/// 4次 ease-in。
+	/// 4次 ease-in
 	case easeInQuart
-	/// 5次 ease-in。
+	/// 5次 ease-in
 	case easeInQuint
-	/// 2次 ease-out (速度ゼロまで減速)。
+	/// 2次 ease-out (速度ゼロまで減速)
 	case easeOutQuad
-	/// 3次 ease-out。
+	/// 3次 ease-out
 	case easeOutCubic
-	/// 4次 ease-out。
+	/// 4次 ease-out
 	case easeOutQuart
-	/// 5次 ease-out。
+	/// 5次 ease-out
 	case easeOutQuint
-	/// 2次 ease-in-out (加速してから減速)。
+	/// 2次 ease-in-out (加速してから減速)
 	case easeInOutQuad
-	/// 3次 ease-in-out。
+	/// 3次 ease-in-out
 	case easeInOutCubic
-	/// 4次 ease-in-out。
+	/// 4次 ease-in-out
 	case easeInOutQuart
-	/// 5次 ease-in-out。
+	/// 5次 ease-in-out
 	case easeInOutQuint
 
 	/// 正規化された時間値に対してイージング関数を評価する。

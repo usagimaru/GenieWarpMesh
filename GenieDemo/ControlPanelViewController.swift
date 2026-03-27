@@ -119,16 +119,24 @@ class ControlPanelViewController: NSViewController {
 		}
 
 		// ウインドウ移動・リサイズ時にフレームを保存＋オーバーレイ更新
-		NotificationCenter.default.addObserver(self, selector: #selector(windowDidMoveOrResize(_:)),
-											   name: NSWindow.didMoveNotification, object: view.window)
-		NotificationCenter.default.addObserver(self, selector: #selector(windowDidMoveOrResize(_:)),
-											   name: NSWindow.didResizeNotification, object: view.window)
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(windowDidMoveOrResize(_:)),
+											   name: NSWindow.didMoveNotification,
+											   object: view.window)
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(windowDidMoveOrResize(_:)),
+											   name: NSWindow.didResizeNotification,
+											   object: view.window)
 
 		// ターゲットパネル移動・リサイズ時
-		NotificationCenter.default.addObserver(self, selector: #selector(targetDidMoveOrResize(_:)),
-											   name: NSWindow.didMoveNotification, object: targetPanelController.panel)
-		NotificationCenter.default.addObserver(self, selector: #selector(targetDidMoveOrResize(_:)),
-											   name: NSWindow.didResizeNotification, object: targetPanelController.panel)
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(targetDidMoveOrResize(_:)),
+											   name: NSWindow.didMoveNotification,
+											   object: targetPanelController.panel)
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(targetDidMoveOrResize(_:)),
+											   name: NSWindow.didResizeNotification,
+											   object: targetPanelController.panel)
 
 	}
 
@@ -949,29 +957,29 @@ class ControlPanelViewController: NSViewController {
 	/// キーに対応する GenieEffect プロパティに値を適用
 	private func applyParamValue(key: String, value: CGFloat) {
 		switch key {
-		case "duration":
-			durationSlider.doubleValue = Double(value)
-			durationLabel.stringValue = String(format: "%.2fs", Double(value))
-			UserDefaults.standard.set(Double(value), forKey: Self.keyDuration)
-		case "minimizeRawTStart": genieEffect.minimizeRawTStart = value
-		case "minimizeRawTEnd":   genieEffect.minimizeRawTEnd = value
-		case "restoreRawTStart":  genieEffect.restoreRawTStart = value
-		case "restoreRawTEnd":    genieEffect.restoreRawTEnd = value
-		case "widthEnd":     genieEffect.widthEnd = value
-		case "slideStart":   genieEffect.slideStart = value
-		case "stretchPower": genieEffect.stretchPower = value
-		case "retreatEnd":   genieEffect.retreatEnd = value
-		case "curveP1Ratio":
-			genieEffect.curveP1Ratio = value
-			refreshDebugOverlay()
-		case "curveP2Ratio":
-			genieEffect.curveP2Ratio = value
-			refreshDebugOverlay()
-		case "gridWidth":
-			genieEffect.gridWidth = Int(value.rounded())
-		case "gridHeight":
-			genieEffect.gridHeight = Int(value.rounded())
-		default: break
+			case "duration":
+				durationSlider.doubleValue = Double(value)
+				durationLabel.stringValue = String(format: "%.2fs", Double(value))
+				UserDefaults.standard.set(Double(value), forKey: Self.keyDuration)
+			case "minimizeRawTStart": genieEffect.minimizeRawTStart = value
+			case "minimizeRawTEnd":   genieEffect.minimizeRawTEnd = value
+			case "restoreRawTStart":  genieEffect.restoreRawTStart = value
+			case "restoreRawTEnd":    genieEffect.restoreRawTEnd = value
+			case "widthEnd":     genieEffect.widthEnd = value
+			case "slideStart":   genieEffect.slideStart = value
+			case "stretchPower": genieEffect.stretchPower = value
+			case "retreatEnd":   genieEffect.retreatEnd = value
+			case "curveP1Ratio":
+				genieEffect.curveP1Ratio = value
+				refreshDebugOverlay()
+			case "curveP2Ratio":
+				genieEffect.curveP2Ratio = value
+				refreshDebugOverlay()
+			case "gridWidth":
+				genieEffect.gridWidth = Int(value.rounded())
+			case "gridHeight":
+				genieEffect.gridHeight = Int(value.rounded())
+			default: break
 		}
 	}
 

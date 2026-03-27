@@ -26,7 +26,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ジニーの方向に応じてメッシュ解像度を自動調整します。アニメーション軸方向の解像度を高くします。"
+            "value" : "アニメーション方向に応じてメッシュ解像度を自動調整します｡"
           }
         }
       }
@@ -61,155 +61,12 @@
         }
       }
     },
-    "Duration of the genie animation in seconds." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ジニーアニメーションの長さ（秒）。"
-          }
-        }
-      }
-    },
     "Early" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "序盤"
-          }
-        }
-      }
-    },
-    "Ease In Cubic" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In Cubic"
-          }
-        }
-      }
-    },
-    "Ease In Quad" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In Quad"
-          }
-        }
-      }
-    },
-    "Ease In Quart" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In Quart"
-          }
-        }
-      }
-    },
-    "Ease In Quint" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In Quint"
-          }
-        }
-      }
-    },
-    "Ease In-Out Cubic" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In-Out Cubic"
-          }
-        }
-      }
-    },
-    "Ease In-Out Quad" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In-Out Quad"
-          }
-        }
-      }
-    },
-    "Ease In-Out Quart" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In-Out Quart"
-          }
-        }
-      }
-    },
-    "Ease In-Out Quint" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease In-Out Quint"
-          }
-        }
-      }
-    },
-    "Ease Out Cubic" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease Out Cubic"
-          }
-        }
-      }
-    },
-    "Ease Out Quad" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease Out Quad"
-          }
-        }
-      }
-    },
-    "Ease Out Quart" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease Out Quart"
-          }
-        }
-      }
-    },
-    "Ease Out Quint" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ease Out Quint"
           }
         }
       }
@@ -234,28 +91,6 @@
         }
       }
     },
-    "Forward playback (minimize) end cutoff in raw time domain." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "順再生の rawT 終盤カットオフ。"
-          }
-        }
-      }
-    },
-    "Forward playback (minimize) start cutoff in raw time domain." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "順再生の rawT 序盤カットオフ。"
-          }
-        }
-      }
-    },
     "Forward rawT" : {
       "localizations" : {
         "ja" : {
@@ -267,7 +102,7 @@
       }
     },
     "Genie Effect Demo" : {
-
+      "shouldTranslate" : false
     },
     "Height" : {
       "localizations" : {
@@ -394,7 +229,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アニメーションの rawT カットオフ。「序盤」で序盤をスキップ、「終盤」で終盤をカット（1.0からの減算量）。"
+            "value" : "アニメーションの rawT カットオフ。序盤と終盤をそれぞれカット。"
           }
         }
       }
@@ -435,28 +270,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "退避 終了"
-          }
-        }
-      }
-    },
-    "Reverse playback (restore) end cutoff in raw time domain." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "逆再生の rawT 終盤カットオフ。"
-          }
-        }
-      }
-    },
-    "Reverse playback (restore) start cutoff in raw time domain." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "逆再生の rawT 序盤カットオフ。"
           }
         }
       }
@@ -566,7 +379,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有効にすると、退避移動と重なるカットオフを無視します（順再生: 序盤カットオフ、逆再生: 終盤カットオフ）。"
+            "value" : "有効にすると、退避移動と重なるカットオフを無視します（順再生: 序盤を無視、逆再生: 終盤を無視）。"
           }
         }
       }
