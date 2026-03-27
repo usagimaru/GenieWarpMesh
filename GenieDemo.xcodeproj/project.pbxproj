@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		517544CA2F70FEDD00E369CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517544C52F70FEDD00E369CC /* AppDelegate.swift */; };
+		517544CB2F70FEDD00E369CC /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517544C62F70FEDD00E369CC /* ControlPanelViewController.swift */; };
+		517544CD2F70FEDD00E369CC /* TargetPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517544C82F70FEDD00E369CC /* TargetPanelController.swift */; };
+		51AC9D702F6E530400DE0B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51AC9D4E2F6E530400DE0B6D /* Assets.xcassets */; };
+		51AC9D712F6E530400DE0B6D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 51AC9D532F6E530400DE0B6D /* Localizable.xcstrings */; };
+		51AC9D722F6E530400DE0B6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51AC9D552F6E530400DE0B6D /* Main.storyboard */; };
+		51C5991A2F710A4D009B7CF2 /* EasingType+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C599192F710A4D009B7CF2 /* EasingType+Menu.swift */; };
+		51C5991D2F710AEA009B7CF2 /* CGSPrivate in Frameworks */ = {isa = PBXBuildFile; productRef = 51C5991C2F710AEA009B7CF2 /* CGSPrivate */; };
+		51C5991F2F710AEA009B7CF2 /* GenieWarpMesh in Frameworks */ = {isa = PBXBuildFile; productRef = 51C5991E2F710AEA009B7CF2 /* GenieWarpMesh */; };
+		51C599222F711462009B7CF2 /* GenieDirection+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C599212F711462009B7CF2 /* GenieDirection+DisplayName.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		517544C52F70FEDD00E369CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		517544C62F70FEDD00E369CC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlPanelViewController.swift; sourceTree = "<group>"; };
+		517544C82F70FEDD00E369CC /* TargetPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetPanelController.swift; sourceTree = "<group>"; };
+		51AC9B912F6D1B6700DE0B6D /* GenieDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenieDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51AC9D4E2F6E530400DE0B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51AC9D532F6E530400DE0B6D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		51AC9D542F6E530400DE0B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		51C599192F710A4D009B7CF2 /* EasingType+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EasingType+Menu.swift"; sourceTree = "<group>"; };
+		51C599202F7111B9009B7CF2 /* GenieDirection+DisplayName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenieDirection+DisplayName.swift"; sourceTree = "<group>"; };
+		51C599212F711462009B7CF2 /* GenieDirection+DisplayName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GenieDirection+DisplayName.swift"; path = "GenieDemo/GenieDirection+DisplayName.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51AC9B8E2F6D1B6700DE0B6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51C5991F2F710AEA009B7CF2 /* GenieWarpMesh in Frameworks */,
+				51C5991D2F710AEA009B7CF2 /* CGSPrivate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		51AC9B882F6D1B6700DE0B6D = {
+			isa = PBXGroup;
+			children = (
+				51C599212F711462009B7CF2 /* GenieDirection+DisplayName.swift */,
+				51AC9D572F6E530400DE0B6D /* GenieDemo */,
+				51AC9B922F6D1B6700DE0B6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51AC9B922F6D1B6700DE0B6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51AC9B912F6D1B6700DE0B6D /* GenieDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51AC9D572F6E530400DE0B6D /* GenieDemo */ = {
+			isa = PBXGroup;
+			children = (
+				517544C52F70FEDD00E369CC /* AppDelegate.swift */,
+				517544C62F70FEDD00E369CC /* ControlPanelViewController.swift */,
+				517544C82F70FEDD00E369CC /* TargetPanelController.swift */,
+				51AC9D4E2F6E530400DE0B6D /* Assets.xcassets */,
+				51AC9D532F6E530400DE0B6D /* Localizable.xcstrings */,
+				51AC9D552F6E530400DE0B6D /* Main.storyboard */,
+				51C599192F710A4D009B7CF2 /* EasingType+Menu.swift */,
+				51C599202F7111B9009B7CF2 /* GenieDirection+DisplayName.swift */,
+			);
+			path = GenieDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51AC9B902F6D1B6700DE0B6D /* GenieDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51AC9B9F2F6D1B6800DE0B6D /* Build configuration list for PBXNativeTarget "GenieDemo" */;
+			buildPhases = (
+				51AC9B8D2F6D1B6700DE0B6D /* Sources */,
+				51AC9B8E2F6D1B6700DE0B6D /* Frameworks */,
+				51AC9B8F2F6D1B6700DE0B6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenieDemo;
+			packageProductDependencies = (
+				51C5991C2F710AEA009B7CF2 /* CGSPrivate */,
+				51C5991E2F710AEA009B7CF2 /* GenieWarpMesh */,
+			);
+			productName = Genie2;
+			productReference = 51AC9B912F6D1B6700DE0B6D /* GenieDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51AC9B892F6D1B6700DE0B6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					51AC9B902F6D1B6700DE0B6D = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = 51AC9B8C2F6D1B6700DE0B6D /* Build configuration list for PBXProject "GenieDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = 51AC9B882F6D1B6700DE0B6D;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				51C5991B2F710AEA009B7CF2 /* XCLocalSwiftPackageReference "../GenieWarpMesh" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 51AC9B922F6D1B6700DE0B6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51AC9B902F6D1B6700DE0B6D /* GenieDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		51AC9B8F2F6D1B6700DE0B6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51AC9D702F6E530400DE0B6D /* Assets.xcassets in Resources */,
+				51AC9D712F6E530400DE0B6D /* Localizable.xcstrings in Resources */,
+				51AC9D722F6E530400DE0B6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51AC9B8D2F6D1B6700DE0B6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51C5991A2F710A4D009B7CF2 /* EasingType+Menu.swift in Sources */,
+				517544CA2F70FEDD00E369CC /* AppDelegate.swift in Sources */,
+				517544CB2F70FEDD00E369CC /* ControlPanelViewController.swift in Sources */,
+				517544CD2F70FEDD00E369CC /* TargetPanelController.swift in Sources */,
+				51C599222F711462009B7CF2 /* GenieDirection+DisplayName.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		51AC9D552F6E530400DE0B6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51AC9D542F6E530400DE0B6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		51AC9B9D2F6D1B6800DE0B6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = R6RZ6S2FLK;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		51AC9B9E2F6D1B6800DE0B6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R6RZ6S2FLK;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		51AC9BA02F6D1B6800DE0B6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6RZ6S2FLK;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clickandmagic.GenieDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		51AC9BA12F6D1B6800DE0B6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6RZ6S2FLK;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clickandmagic.GenieDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51AC9B8C2F6D1B6700DE0B6D /* Build configuration list for PBXProject "GenieDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51AC9B9D2F6D1B6800DE0B6D /* Debug */,
+				51AC9B9E2F6D1B6800DE0B6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51AC9B9F2F6D1B6800DE0B6D /* Build configuration list for PBXNativeTarget "GenieDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51AC9BA02F6D1B6800DE0B6D /* Debug */,
+				51AC9BA12F6D1B6800DE0B6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		51C5991B2F710AEA009B7CF2 /* XCLocalSwiftPackageReference "../GenieWarpMesh" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../GenieWarpMesh;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51C5991C2F710AEA009B7CF2 /* CGSPrivate */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CGSPrivate;
+		};
+		51C5991E2F710AEA009B7CF2 /* GenieWarpMesh */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GenieWarpMesh;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 51AC9B892F6D1B6700DE0B6D /* Project object */;
+}
