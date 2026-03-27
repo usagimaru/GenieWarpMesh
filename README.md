@@ -2,9 +2,14 @@
 
 A Swift package that applies macOS Genie-style minimize/restore effects to any `NSWindow` using the private `CGSSetWindowWarp` API.
 
+[日本語 (Japanese)](README_ja.md)
+
+<img src="./screenshot.jpg" width=420 alt="Screenshot">
+
 ## Requirements
 
 - macOS 14.0+
+    - (Tested only on macOS 26.4)
 - Swift 5.9+
 
 ## Installation
@@ -249,4 +254,4 @@ if let corrected = genieEffect.computeCorrectedFrame(
 
 ## License
 
-See LICENSE for details.
+See [LICENSE](./LICENSE) for details.

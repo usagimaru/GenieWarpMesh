@@ -2,9 +2,14 @@
 
 macOS のジニーエフェクト風の最小化・復元アニメーションを任意の `NSWindow` に適用する Swift パッケージです。内部では非公開 API `CGSSetWindowWarp` を使用しています。
 
+[English (英語)](README.md)
+
+<img src="./screenshot.jpg" width=420 alt="Screenshot">
+
 ## 要件
 
 - macOS 14.0+
+    - （macOS 26.4でのみテスト済み）
 - Swift 5.9+
 
 ## インストール
@@ -249,4 +254,4 @@ if let corrected = genieEffect.computeCorrectedFrame(
 
 ## ライセンス
 
-See LICENSE for details.
+詳しくは[LICENSE](./LICENSE)を確認してください｡
