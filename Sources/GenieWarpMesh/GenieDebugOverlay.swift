@@ -2,8 +2,8 @@
 //  GenieDebugOverlay.swift
 //  GenieWarpMesh
 //
-//  デバッグオーバーレイのデータ受信プロトコル定義。
-//  GenieEffect がこのプロトコルを通じてデバッグデータを配信する。
+//  © 2026 usagimaru.
+//  デバッグオーバーレイのデータ受信プロトコル定義。GenieEffect がこのプロトコルを通じてデバッグデータを配信する。
 //
 
 import Foundation

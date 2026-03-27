@@ -2,6 +2,7 @@
 //  GenieDirection.swift
 //  GenieWarpMesh
 //
+//  © 2026 usagimaru.
 //  ジニーワープエフェクトの吸い込み方向。
 //
 

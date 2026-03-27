@@ -2,6 +2,7 @@
 //  EasingType.swift
 //  GenieWarpMesh
 //
+//  © 2026 usagimaru.
 //  アニメーションタイミング用のイージングカーブ型。
 //
 

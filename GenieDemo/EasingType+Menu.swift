@@ -2,6 +2,7 @@
 //  EasingType+Menu.swift
 //  GenieWarpMesh
 //
+//  © 2026 usagimaru.
 //  デモアプリ用: EasingType の表示名とメニュー関連ヘルパーを定義する extension。
 //
 

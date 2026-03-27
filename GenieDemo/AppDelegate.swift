@@ -3,6 +3,7 @@
 //  GenieWarpMesh
 //
 //  Created by usagimaru on 2026/03/20.
+//  © 2026 usagimaru.
 //
 
 import Cocoa

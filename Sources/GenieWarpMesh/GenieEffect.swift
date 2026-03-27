@@ -2,6 +2,7 @@
 //  GenieEffect.swift
 //  GenieWarpMesh
 //
+//  © 2026 usagimaru.
 //  CGSSetWindowWarp プライベート API を使用したジニーエフェクトの実装。
 //
 
